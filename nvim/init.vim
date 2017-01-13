@@ -5,6 +5,7 @@ Plug 'scrooloose/syntastic' " syntax check
 Plug 'tpope/vim-surround' " change surrounding quotes, etc.
 Plug 'tpope/vim-repeat' " repeat plug commands
 Plug 'dougireton/vim-chef' " recognise chef cookbook file types
+Plug 'Chiel92/vim-autoformat' " auto format/indent
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -16,6 +17,7 @@ set background=dark
 colorscheme solarized
 
 " Tab control
+filetype plugin indent on
 set expandtab " insert spaces rather than tabs for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4 " the visible width of tabs
@@ -23,6 +25,11 @@ set softtabstop=4 " edit as if the tabs are 4 characters wide
 set shiftwidth=4 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
+
+" Ruby
+:autocmd Filetype ruby set tabstop=2
+:autocmd Filetype ruby set softtabstop=2
+:autocmd Filetype ruby set shiftwidth=2
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -35,3 +42,4 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']

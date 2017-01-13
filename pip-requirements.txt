@@ -1,0 +1,11 @@
+awacs
+awscli
+behave
+boto3
+cached-property
+chef
+flake8
+neovim
+pudb
+virtualenv
+yamllint

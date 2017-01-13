@@ -16,7 +16,7 @@ set number
 set background=dark
 colorscheme solarized
 
-" Tab control
+" Default tab control
 filetype plugin indent on
 set expandtab " insert spaces rather than tabs for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
@@ -26,10 +26,14 @@ set shiftwidth=4 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
+" Python
+:autocmd Filetype python set ts=4 sts=4 sw=4
+
 " Ruby
-:autocmd Filetype ruby set tabstop=2
-:autocmd Filetype ruby set softtabstop=2
-:autocmd Filetype ruby set shiftwidth=2
+:autocmd Filetype ruby set ts=2 sts=2 sw=2
+
+" YAML
+:autocmd Filetype yaml set ts=2 sts=2 sw=2
 
 " Syntastic settings
 set statusline+=%#warningmsg#

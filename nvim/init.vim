@@ -6,6 +6,8 @@ Plug 'tpope/vim-surround' " change surrounding quotes, etc.
 Plug 'tpope/vim-repeat' " repeat plug commands
 Plug 'dougireton/vim-chef' " recognise chef cookbook file types
 Plug 'Chiel92/vim-autoformat' " auto format/indent
+Plug 'Shougo/neocomplete.vim' " autocomplete
+Plug 'derekwyatt/vim-scala' " Scala formatting
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -45,5 +47,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_args = '-r cookstyle'
+let g:syntastic_python_flake8_post_args="--max-line-length=120"
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
